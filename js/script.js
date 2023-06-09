@@ -12,3 +12,8 @@ random = (min, max, numbers) => {
     return totNumbers; //restituisco l'array completo
 }
 console.log(random(1, 99, 5));
+const row = document.getElementById('main-row');
+const numbersLocation = document.createElement('div');
+numbersLocation.className = 'col';
+numbersLocation.innerText = 'numero';
+row.appendChild(numbersLocation);
