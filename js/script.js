@@ -35,13 +35,16 @@ for (let i = 0; i < 5; i++) { //giro 5 volte
     row.appendChild(box); //inserisco le col nella row
 }
 
-let seconds = 30; //durata del timer
+let seconds = 10; //durata del timer
 timer.innerText = seconds; //mostro il timer
 const counter = setInterval(() =>{
     timer.innerText = --seconds; //il tempo scorre
     if(seconds === 0){ //allo 0...
         clearInterval(counter); //il timer si ferma
         timer.innerText = 'TEMPO SCADUTO'
-        row.innerHTML = ''; //i numeri spariscono
+        row.className = 'text-white'; //i numeri spariscono
+        for (let i = 0; i < 5; i++){
+            let respond = prompt('scrivi uno dei numeri che hai visto');
+        }
     }
-}, 1000)
+}, 1000);
