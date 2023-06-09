@@ -20,6 +20,9 @@ const buildBox = () => {
 //prendo una variabile per la row
 const row = document.getElementById('main-row');
 
+//variabile per il timer
+const timer = document.getElementById('timer');
+
 //creo un array per la lista di numeri
 const listNumbers = [];
 
@@ -32,15 +35,13 @@ for (let i = 0; i < 5; i++) { //giro 5 volte
     row.appendChild(box); //inserisco le col nella row
 }
 
-const timer = document.getElementById('timer');
-
-let seconds = 30;
-timer.innerText = seconds;
+let seconds = 30; //durata del timer
+timer.innerText = seconds; //mostro il timer
 const counter = setInterval(() =>{
-    timer.innerText = --seconds;
-    if(seconds === 0){
-        clearInterval(counter);
+    timer.innerText = --seconds; //il tempo scorre
+    if(seconds === 0){ //allo 0...
+        clearInterval(counter); //il timer si ferma
         timer.innerText = 'TEMPO SCADUTO'
-        row.innerHTML = '';
+        row.innerHTML = ''; //i numeri spariscono
     }
 }, 1000)
