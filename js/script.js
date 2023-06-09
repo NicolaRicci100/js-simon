@@ -31,3 +31,16 @@ for (let i = 0; i < 5; i++) { //giro 5 volte
     box.innerText = randomNumber; //inserisco il numero nel contenitore
     row.appendChild(box); //inserisco le col nella row
 }
+
+const timer = document.getElementById('timer');
+
+let seconds = 30;
+timer.innerText = seconds;
+const counter = setInterval(() =>{
+    timer.innerText = --seconds;
+    if(seconds === 0){
+        clearInterval(counter);
+        timer.innerText = 'TEMPO SCADUTO'
+        row.innerHTML = '';
+    }
+}, 1000)
