@@ -11,9 +11,16 @@ random = (min, max, numbers) => {
     }
     return totNumbers; //restituisco l'array completo
 }
-console.log(random(1, 99, 5));
+console.log(random(1, 99, 5)); //faccio apparire l'array generato dalla funzione nel log
+
+
 const row = document.getElementById('main-row');
-const numbersLocation = document.createElement('div');
-numbersLocation.className = 'col';
-numbersLocation.innerText = 'numero';
-row.appendChild(numbersLocation);
+
+//     const numbersLocation = document.createElement('div');
+//     numbersLocation.className = 'col';
+//     numbersLocation.innerText = 'numero';
+
+// row.appendChild(numbersLocation);
+let col = '';
+col = `<div class="col">${random(1, 99, 5)}</div>`;
+row.innerHTML = col;
