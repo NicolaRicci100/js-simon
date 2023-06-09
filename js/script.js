@@ -11,16 +11,26 @@ random = (min, max, numbers) => {
     }
     return totNumbers; //restituisco l'array completo
 }
-console.log(random(1, 99, 5)); //faccio apparire l'array generato dalla funzione nel log
 
+//* FUNZIONE PER CONTENITORE ELEMENTI
+buildBox = () => {
+    const box = document.createElement('div');
+    box.className = 'col';
+    box.innerText = 'number'
+    return box;
+}
 
+//prendo una variabile per la row
 const row = document.getElementById('main-row');
 
-//     const numbersLocation = document.createElement('div');
-//     numbersLocation.className = 'col';
-//     numbersLocation.innerText = 'numero';
+//dichiaro quanti numeri voglio
+const numbers = 5;
 
-// row.appendChild(numbersLocation);
-let col = '';
-col = `<div class="col">${random(1, 99, 5)}</div>`;
-row.innerHTML = col;
+//richiamo la funzione random
+random(1, 99, numbers); 
+
+//creo i div per i numeri
+for (let i = 0; i < numbers; i++) {
+    const box = buildBox();
+    row.appendChild(box);
+}
