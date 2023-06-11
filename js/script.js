@@ -40,7 +40,7 @@ for (let i = 0; i < 5; i++) { //giro 5 volte
     console.log(listNumbers);
 }
 
-let seconds = 5; //durata del timer
+let seconds = 30; //durata del timer
 timer.innerText = seconds; //mostro il timer
 const counter = setInterval(() =>{
     timer.innerText = --seconds; //il tempo scorre
